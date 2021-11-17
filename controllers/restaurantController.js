@@ -1,5 +1,5 @@
 const {Restaurant} = require('../models');
-const categories = ['Italian', 'Fast Food'];
+const categories = ['Italian', 'Fast Food', 'Mexican'];
 
 module.exports.viewAll = async function(req, res, next) {
     const restaurants = await Restaurant.findAll();
@@ -31,11 +31,34 @@ module.exports.updateResturant = async function(req, res) {
 };
 
 module.exports.deleteRestaurant = async function(req, res){
-    await Resturant.destroy(
+    await Restaurant.destroy(
         {
             where:{
                 id: req.params.id
             }
+        });
+    res.redirect('/');
+};
+
+module.exports.renderAddForm = function(req, res){
+    const restaurant = {
+        name: "",
+        description: "",
+        rating: 1,
+        image: "",
+        category: categories[0]
+    };
+    res.render('add', {restaurant, categories});
+};
+
+module.exports.addRestaurant = async function(req, res){
+    await Restaurant.create(
+        {
+            name: req.body.name,
+            category: req.body.category,
+            rating: req.body.rating,
+            image: req.body.image,
+            description: req.body.description
         });
     res.redirect('/');
 };
