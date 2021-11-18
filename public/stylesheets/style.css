@@ -97,3 +97,31 @@ a {
 .card:hover{
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.3);
 }
+
+.button {
+  display: block;
+  border-radius: 6px;
+  padding: 8px 16px;
+  text-decoration: none;
+  box-shadow: rgba(0,0,0,0) 0px 0px 0px 0px, rgba(0,0,0,0) 0px 0px 0px 0px, rgba(0,0,0,0.5) 0px 1px 2px 0px;
+  font-size: 14px;
+  line-height: 1.25rem;
+}
+
+.button.save{
+  background: #155E75;
+  color: white;
+  border: 1px solid #164E63;
+}
+
+.add-button-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main-header {
+  background: #242323;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
