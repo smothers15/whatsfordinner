@@ -114,6 +114,11 @@ a {
   border: 1px solid #164E63;
 }
 
+.button.save:hover {
+  background: #ffa50c;
+  border: 1px solid black;
+}
+
 .add-button-row {
   display: flex;
   justify-content: flex-start;
