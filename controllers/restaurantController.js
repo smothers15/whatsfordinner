@@ -5,6 +5,7 @@ module.exports.viewAll = async function(req, res, next) {
     //const restaurants = await Restaurant.findAll();
     //let searchCategory = 'All';
     let searchCategories = ['All'];
+    let searchRandom = req.query.random || false;
     for(let i = 0; i<categories.length; i++){
         searchCategories.push(categories[i]);
     }
@@ -17,13 +18,13 @@ module.exports.viewAll = async function(req, res, next) {
             where: {
                 category: searchCategory
             }
-        })
+        });
     }
-    if(restaurants.length > 0){
+    if(restaurants.length > 0 && searchRandom){
         let randomIndex = getRandomInt(restaurants.length);
         restaurants = [restaurants[randomIndex]];
     }
-    res.render('index', {restaurants, categories:searchCategories, searchCategory});
+    res.render('index', {restaurants, categories:searchCategories, searchCategory, searchRandom});
 };
 
 module.exports.renderEditForm = async function(req, res, next) {
