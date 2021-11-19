@@ -21,7 +21,7 @@ a {
 .card {
   background: white;
   border-radius: 16px;
-  width: 350px;
+  width: 300px;
   position: relative;
   overflow: hidden;
   box-shadow:
@@ -115,7 +115,7 @@ a {
 }
 
 .button.save:hover {
-  background: #ffa50c;
+  background: #fe8a00;
   border: 1px solid black;
 }
 
@@ -125,8 +125,9 @@ a {
 }
 
 .main-header {
-  background: #242323;
+  background: #fe8a00;
   width: 100%;
   display: flex;
   justify-content: center;
+  height: 135px;
 }
